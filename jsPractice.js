@@ -48,3 +48,12 @@ function Vehicle(make, model){
  // INSTANCEOF
  // instanceOf lets us see if an object created is an instance of a constructors
 // newCar instanceOf Vehicle ..... this will return "true" or "false" in console
+
+// own vs prototype properties
+// Own properties are defined directly on the object instance itself. And prototype properties are defined on the prototype.
+
+
+// Use Prototype Properties to Reduce Duplicate Code
+// The prototype is an object that is shared among ALL instances of Bird
+// If we had three instances of the Vehicle constructor, we can add a property to all instances by:
+// Vehicle.prototype.wheels = 4; then all instances now have this prop.
