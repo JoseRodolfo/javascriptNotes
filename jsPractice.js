@@ -57,3 +57,28 @@ function Vehicle(make, model){
 // The prototype is an object that is shared among ALL instances of Bird
 // If we had three instances of the Vehicle constructor, we can add a property to all instances by:
 // Vehicle.prototype.wheels = 4; then all instances now have this prop.
+
+
+// iterate over all properties
+// checking to see if props are own property of instance, or of Prototype
+
+function Dog(name) {
+  this.name = name;      //property of a prototype
+}
+
+Dog.prototype.numLegs = 4; //still props of a prototype
+
+let beagle = new Dog("Snoopy"); //new instance
+
+let ownProps = []; //array for own props
+let prototypeProps = []; // array for prototype props
+
+// Add your code below this line
+
+for (let property in beagle){
+  if(beagle.hasOwnProperty(property)){
+    ownProps.push(property);
+  }else{
+    prototypeProps.push(property);
+  }
+}
