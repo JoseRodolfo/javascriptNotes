@@ -82,3 +82,34 @@ for (let property in beagle){
     prototypeProps.push(property);
   }
 }
+
+// change the prototype to a new object
+// we do this so we dont add properties to the object one by one
+function Dog(name) {
+  this.name = name;
+}
+
+// when building object prototypes this way, we must add the contructor propert into the object
+Dog.prototype = {
+  constructor: Dog,
+  numLegs : 4,
+  eat: function () {
+    console.log("hello lets eat");
+  },
+  describe: function () {
+    console.log("some yumy food");
+  }
+
+};
+
+// where does the an objects prototype come from?
+// an object inherits its prototype directly from the constructor function that created it.
+function Dog(name) {
+  this.name = name;
+}
+
+let beagle = new Dog("Snoopy");
+
+// Add your code below this line
+Beagle.prototype.isPrototypeOf(Dog)
+// you can check if anobject is a prototype of a constructor function like above.
